@@ -6,7 +6,11 @@
     <!-- bean definitions here -->
 
     <!-- Number of bean created in this section will result in no. of Objects creation-->
-    <bean id = "alien1" class="com.telusko.Alien">
+    <bean id = "alien1" class="com.telusko.Alien" autowire="byName">
+
+        <property name="age" value="21"/>
+<!--        <property name="comp" ref="comp"/>-->
+
 <!--        <property name="age" value="21"></property> &lt;!&ndash; For primitive values use "value"&ndash;&gt;-->
 <!--        <property name="lap" ref="lap1"></property> &lt;!&ndash; For objects use "ref" like here&ndash;&gt;-->
 
@@ -18,13 +22,14 @@
 <!--        <constructor-arg index="1" ref="lap1"/>         Give the indexing of the parameter of Constructor-->
 <!--        <constructor-arg index="0" value="21"/>         Idle thing to use.    -->
 
-        <constructor-arg name="age" value="21"/>            <!-- Give directly names of the variable. -->
-        <constructor-arg name="lap" ref="lap1"/>
+<!--        <constructor-arg name="age" value="21"/>            &lt;!&ndash; Give directly names of the variable. &ndash;&gt;-->
+<!--        <constructor-arg name="lap" ref="lap1"/>-->
 
     </bean>
 <!--    If multiple beans are created with help of same class that number of object will be created.-->
 
 
-    <bean id = "lap1" class="com.telusko.Laptop"> </bean>
+    <bean id = "comp" class="com.telusko.Laptop"> </bean>
+<!--    <bean id = "comp1" class="com.telusko.Desktop"> </bean>-->
 
 </beans>
